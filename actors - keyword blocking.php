@@ -38,10 +38,10 @@ if (isset($_POST['submitted'])) {
     $idLimit = filter_sql_keywords($idLimit);
     if (empty($idLimit)) {
         echo "<p>Invalid input provided. Keyword is detected!!! Go AWAY HACKERS</p>";
-        $idLimit = 0;  // You can also choose to stop execution or handle differently
+        $idLimit = 0;  
     }
 } else {
-    $idLimit = 0; // Default value if no input provided
+    $idLimit = 0; 
 }
 
 $table = execute_query("SELECT $columns_str FROM People p JOIN Role r ON p.id = r.pid WHERE r.role_name = 'Actor' AND p.id >= $idLimit");
