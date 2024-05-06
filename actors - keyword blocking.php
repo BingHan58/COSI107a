@@ -44,7 +44,7 @@ if (isset($_POST['submitted'])) {
     $idLimit = 0; 
 }
 
-$table = execute_query("SELECT $columns_str FROM People p JOIN Role r ON p.id = r.pid WHERE r.role_name = 'Actor' AND p.id >= $idLimit");
+$table = execute_query("SELECT $columns_str FROM People p JOIN Role r ON p.id = r.pid WHERE r.role_name = 'Actor' AND p.id = $idLimit");
 
 generate_table($columns, $table);
 
